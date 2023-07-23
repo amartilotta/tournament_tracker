@@ -7,13 +7,13 @@ CREATE TABLE jugador(
 	apellido varchar(30) not null,
     pais varchar(60) not null,
 	fecha_de_nacimiento date not null,
-    informacion_de_contacto date not null,
+    informacion_de_contacto varchar(50) not null,
 	id_equipo int not null
 );
 
 CREATE TABLE equipo(
 	id_equipo int not null auto_increment primary key,
-	nombre_equipo varchar(30) not null,
+	nombre_equipo varchar(60) not null,
 	fecha_de_creacion date not null,
 	pais varchar(60) not null,
 	id_torneo int not null
@@ -21,7 +21,7 @@ CREATE TABLE equipo(
 
 CREATE TABLE juego(
 	id_juego int not null auto_increment primary key,
-	nombre varchar(30) not null,
+	nombre varchar(80) not null,
     desarrollador varchar(30) not null,
     genero varchar(30) not null,
     plataforma varchar(30) not null,
@@ -33,14 +33,14 @@ CREATE TABLE torneo(
 	nombre_torneo varchar(30) not null,
     fecha_de_inicio date not null,
     fecha_de_finalizacion date not null,
-    premios varchar(30) not null
+    premios varchar(60) not null
 );
 
 CREATE TABLE partida(
 	id_partida int not null auto_increment primary key,
 	id_torneo int not null,
     id_equipo int not null,
-    resultados varchar(45) not null,
+    resultados varchar(70) not null,
     duracion varchar(45) not null
 );
 
@@ -97,14 +97,38 @@ CREATE INDEX ix_registro_puntuaciones_fecha_hora ON registroDePuntuaciones(fecha
 
 
 
+Drop table registrodepuntuaciones;
+Drop table partida;
+Drop table jugador;
+Drop table equipo;
 
+Drop table juego;
+Drop table torneo;
 /*	QUERYS */
 select * from jugador;
-select * from equipo;
+
 select * from juego;
 select * from torneo;
 select * from partida;
 select * from registroDePuntuaciones;
+
+
+
+select * from torneo;
+
+select * from equipo;
+
+select * from juego;
+
+select * from jugador;
+
+select * from partida;
+
+select * from registrodepuntuaciones;
+
+
+
+
 
 
 
